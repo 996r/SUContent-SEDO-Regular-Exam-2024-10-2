@@ -3,25 +3,25 @@ pipeline {
 
     environment {
         DOTNET_VERSION = "6.0.x"
-        PATH = "/usr/local/share/dotnet:$HOME/.dotnet:$HOME/.dotnet/tools:$PATH"
+        
     }
 
     stages {
         stage('Restore Dependencies') {
             steps {
-                sh 'dotnet restore'
+                sh '/usr/local/bin/dotnet/dotnet restore'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'dotnet build --no-restore'
+                sh '/usr/local/bin/dotnet/dotnet build --no-restore'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'dotnet test  --no-build --verbosity normal'
+                sh '/usr/local/bin/dotnet/dotnet test  --no-build --verbosity normal'
             }
         }
     }
