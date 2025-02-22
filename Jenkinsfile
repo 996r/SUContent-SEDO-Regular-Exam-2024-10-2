@@ -9,19 +9,19 @@ pipeline {
     stages {
         stage('Restore Dependencies') {
             steps {
-                sh '/usr/local/bin/dotnet/dotnet restore'
+                sh 'dotnet restore'
             }
         }
 
         stage('Build') {
             steps {
-                sh '/usr/local/bin/dotnet/dotnet build --no-restore'
+                sh 'dotnet build --no-restore'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '/usr/local/bin/dotnet/dotnet test  --no-build --verbosity normal'
+                sh 'dotnet test  --no-build --verbosity normal'
             }
         }
     }
