@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOTNET_VERSION = "6.0.x"
+        PATH = "/usr/local/share/dotnet:$HOME/.dotnet:$HOME/.dotnet/tools:$PATH"
     }
 
     stages {
