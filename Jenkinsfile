@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         DOTNET_VERSION = "6.0.x"
+        PATH = "/usr/local/bin:/usr/local/share/dotnet:/usr/bin:/bin"
         
     }
 
